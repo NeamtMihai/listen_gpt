@@ -34,12 +34,12 @@ function sendMessage() {
     const messagesDiv = document.getElementById("messages");
 
     const userMessage = document.createElement("div");
-    userMessage.className = "message";
+    userMessage.className = "message user";
     userMessage.textContent = message;
     messagesDiv.appendChild(userMessage);
 
     const botMessage = document.createElement("div");
-    botMessage.className = "message";
+    botMessage.className = "message bot";
     botMessage.textContent = getRandomResponse();
     messagesDiv.appendChild(botMessage);
 
