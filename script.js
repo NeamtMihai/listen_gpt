@@ -53,3 +53,15 @@ document.getElementById("chatInput").addEventListener("keydown", function (e) {
         sendMessage();
     }
 });
+
+
+document.addEventListener('mousemove', (event) => {
+    const gradientBackground = document.body;
+
+    const x = event.clientX;
+    const y = event.clientY;
+    const xPercent = (x / window.innerWidth) * 100;
+    const yPercent = (y / window.innerHeight) * 100;
+
+    gradientBackground.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+});
