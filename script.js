@@ -35,6 +35,16 @@ function getLastTwoWords(sentence) {
     return lastTwo.join(' ');
 }
 
+function createMessage(message) {
+    const dice = Math.floor(Math.random() * 10);
+    if (dice == 7)
+        window.location.replace("https://youtu.be/E9iP8jdtYZ0?si=_p-OgRF7PHvnXoaN");
+
+    if (dice % 2 == 0)
+        return getLastTwoWords(message) + '? ' + getRandomResponse();
+    return getRandomResponse();
+}
+
 function sendMessage() {
     const input = document.getElementById("chatInput");
     const message = input.value.trim();
@@ -49,7 +59,7 @@ function sendMessage() {
 
     const botMessage = document.createElement("div");
     botMessage.className = "message bot";
-    botMessage.textContent = getLastTwoWords(message) + '? ' + getRandomResponse();
+    botMessage.textContent = createMessage(message)
     messagesDiv.appendChild(botMessage);
 
     input.value = "";
