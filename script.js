@@ -26,6 +26,15 @@ function getRandomResponse() {
     return responses[index];
 }
 
+function getLastTwoWords(sentence) {
+    const words = sentence.trim().split(/\s+/);
+    const lastTwo = words.slice(-2)
+    lastTwo[0] = lastTwo[0].split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    return lastTwo.join(' ');
+}
+
 function sendMessage() {
     const input = document.getElementById("chatInput");
     const message = input.value.trim();
@@ -40,7 +49,7 @@ function sendMessage() {
 
     const botMessage = document.createElement("div");
     botMessage.className = "message bot";
-    botMessage.textContent = getRandomResponse();
+    botMessage.textContent = getLastTwoWords(message) + '? ' + getRandomResponse();
     messagesDiv.appendChild(botMessage);
 
     input.value = "";
