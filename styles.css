@@ -10,7 +10,7 @@
     background: linear-gradient(120deg, #4335A7, #FF7F3E);
     background-size: 100% 210%;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
   }
   

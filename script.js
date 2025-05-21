@@ -40,7 +40,7 @@ function createMessage(message) {
     if (dice == 7)
         window.location.replace("https://youtu.be/E9iP8jdtYZ0?si=_p-OgRF7PHvnXoaN");
 
-    if (dice % 2 == 0)
+    if (dice % 3 == 0)
         return getLastTwoWords(message) + '? ' + getRandomResponse();
     return getRandomResponse();
 }
@@ -73,6 +73,13 @@ document.getElementById("chatInput").addEventListener("keydown", function (e) {
     }
 });
 
+document.addEventListener('keydown', (e) => {
+  const input = document.getElementById('chatInput');
+  if (e.key === '/' && document.activeElement !== input) {
+    e.preventDefault(); // prevent typing "/" somewhere else
+    input.focus();
+  }
+});
 
 document.addEventListener('mousemove', (event) => {
     const gradientBackground = document.body;
